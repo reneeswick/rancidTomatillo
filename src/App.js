@@ -8,17 +8,15 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: movieData.movies,
-      greeting: 'hello'
+      movies: movieData.movies
     }
   }
 
   render() {
     return (
       <div>
-        <h1>{this.state.greeting}!</h1>
-        {console.log(this.state.movies[1])}
-        <CardContainer />
+        {/* {console.log(this.state.movies[1])} */}
+        <CardContainer movieData={this.state.movies} />
       </div>
     );
   }

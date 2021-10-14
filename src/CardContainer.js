@@ -1,15 +1,23 @@
 import React, { Component } from 'react'
+import Card from './Card'
 
-class CardContainer extends Component {
-  render() {
+const CardContainer = (props) => {
+  const cardInfo = props.movieData.map(movie => {
     return (
-      <div className="CardContainer">
-        <h1>Hello CardContainer!</h1>
-      </div>
-    );
-  }
-}
+      <Card id={movie.id} poster={movie.poster_path} />
+    )
+  })
+  console.log('movies in CardContainer:\n', props.movieData)
 
+
+  return (
+    <div className="CardContainer">
+      <h1>Hello CardContainer!</h1>
+      <p>CardContainer test</p>
+      {cardInfo}
+    </div>
+  );
+}
 
 
 export default CardContainer;
