@@ -16,6 +16,9 @@ class App extends Component {
     return (
       <div>
         {/* {console.log(this.state.movies[1])} */}
+        <header>
+          <h1>Movie time</h1>
+        </header>
         <CardContainer movieData={this.state.movies} />
       </div>
     );
