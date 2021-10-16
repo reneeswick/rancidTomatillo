@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 // import movieData from './movieData.js';
 import CardContainer from './CardContainer.js';
 import MovieDetails from './MovieDetails.js';
+import ApiCalls from './ApiCalls.js'
 // import Card from './Card.js'
 import './App.css';
 
@@ -17,6 +18,10 @@ class App extends Component {
   }
 
   componentDidMount() {
+    // function to fire fetch in apiCalls
+    // that apiCalls function would fetch, then first function in app
+    // that app function would setState
+
     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
       .then(results => results.json())
       .then(data =>
