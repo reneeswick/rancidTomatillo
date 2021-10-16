@@ -1,6 +1,6 @@
 .CardContainer {
-  /* padding: 2px; */
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* grid-gap: 20px; */
+  grid-template-columns: repeat(auto-fit, 25rem);
+  grid-gap: 2rem;
+  justify-content: space-evenly;
 }

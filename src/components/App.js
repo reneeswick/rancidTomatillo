@@ -56,9 +56,9 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="app">
         <header>
-          <h1>Movie time</h1>
+          <h1 className="page-title">Movie time</h1>
         </header>
         {this.state.hasError && <h2>There is an error with the server, please try again.</h2>}
         {this.state.movieIsSelected && <MovieDetails selectedMovie={this.state.selectedMovie} returnHome={this.returnHome} />}

@@ -5,11 +5,12 @@ const MovieDetails = ({ selectedMovie, returnHome }) => {
 
   return (
     <div>
-      <h2>{selectedMovie.title}</h2>
-        <button onClick={() => {returnHome()}}>Home</button>
-        <img className='movieBackDrop' src= {selectedMovie.backdrop_path} alt={selectedMovie.overview}/>
-        <p>{selectedMovie.overview}</p>
-        <p>{selectedMovie.release_date}</p>
+      <div className="movie-details-container">
+        <h2 className="title">{selectedMovie.title} ({selectedMovie.release_date})</h2>
+          <img className="movieBackDrop" src= {selectedMovie.backdrop_path} alt={selectedMovie.overview}/>
+          <p className="overview">{selectedMovie.overview}</p>
+      </div>
+      <button onClick={() => {returnHome()}}>Home</button>
     </div>
   )
 }
