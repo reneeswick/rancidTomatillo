@@ -1,0 +1,24 @@
+.movie-details-container {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.movieBackDrop {
+  grid-row-start: 1;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.overview {
+font-size: 1.5rem;
+grid-row-start: 2;
+grid-row-end: 4;
+}

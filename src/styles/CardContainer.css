@@ -1,0 +1,6 @@
+.CardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 25rem);
+  grid-gap: 2rem;
+  justify-content: space-evenly;
+}
