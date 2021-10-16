@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from './Card'
 // import MovieDetails from './MovieDetails'
-import '../CardContainer.css'
+import '../styles/CardContainer.css'
 
 const CardContainer = (props) => {
   const cardInfo = props.movieData.map(movie => {

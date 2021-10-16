@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import CardContainer from './CardContainer.js';
 import MovieDetails from './MovieDetails.js';
 import {fetchAllMovies, fetchSingleMovie} from '../ApiCalls.js'
-import '../App.css';
+import '../styles/App.css';
 
 class App extends Component {
   constructor() {
