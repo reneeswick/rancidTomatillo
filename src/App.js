@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-// import movieData from './movieData.js';
 import CardContainer from './CardContainer.js';
 import MovieDetails from './MovieDetails.js';
-import ApiCalls from './ApiCalls.js'
-// import Card from './Card.js'
+import {fetchAllMovies, fetchSingleMovie} from './ApiCalls.js'
 import './App.css';
 
 class App extends Component {
@@ -18,12 +16,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // function to fire fetch in apiCalls
-    // that apiCalls function would fetch, then first function in app
-    // that app function would setState
-
-    fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
-      .then(results => results.json())
+    fetchAllMovies()
       .then(data =>
         this.setState({
           movies: data.movies
@@ -39,19 +32,18 @@ class App extends Component {
 
   selectMovie = (id) => {
     this.setState({ movieIsSelected: true })
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-      .then(results => results.json())
-      .then(data =>
-        this.setState({
-          selectedMovie: data.movie
+      fetchSingleMovie(id)
+        .then(data =>
+          this.setState({
+            selectedMovie: data.movie
+          })
+        )
+        .catch(error => {
+          console.log('Error in movie detail:', error)
+          this.setState({
+            hasError: true
+          })
         })
-      )
-      .catch(error => {
-        console.log('Error in movie detail:', error)
-        this.setState({
-          hasError: true
-        })
-      })
   }
 
   returnHome = () => {
