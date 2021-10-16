@@ -1,16 +1,16 @@
 import React from 'react'
 import Card from './Card'
-import MovieDetails from './MovieDetails'
+// import MovieDetails from './MovieDetails'
 import './CardContainer.css'
 
 const CardContainer = (props) => {
   const cardInfo = props.movieData.map(movie => {
     return (
       <Card
-      id={movie.id}
-      poster={movie.poster_path}
-      key={movie.id}
-      movieIsSelected = {props.movieIsSelected}
+        id={movie.id}
+        poster={movie.poster_path}
+        key={movie.id}
+        selectMovie={props.selectMovie}
       />
     )
   })
