@@ -15,25 +15,9 @@ const CardContainer = (props) => {
     )
   })
 
-  const selectedMovie = (props) => {
-    return (
-      <MovieDetails
-      key={props.selectedMovie.movie.id}
-      title={props.selectedMovie.movie.title}
-      releaseDate={props.selectedMovie.movie.release_date}
-      overview={props.selectedMovie.movie.overview}
-      rating={props.selectedMovie.movie.average_rating}
-      // genre={props.selectedMovie.movie.genres[...genres]}
-      budget={props.selectedMovie.movie.budget}
-      revenue={props.selectedMovie.movie.revenue}
-      />
-    )
-  }
-
   return (
     <div className="CardContainer">
       {cardInfo}
-      {selectedMovie}
     </div>
   );
 }

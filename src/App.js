@@ -19,6 +19,12 @@ class App extends Component {
     this.setState({movieIsSelected: true})
   }
 
+  returnHome = () => {
+    this.setState({
+      movieIsSelected: false,
+      selectedMovie: {}
+    })
+  }
 
   render() {
     return (
@@ -26,7 +32,7 @@ class App extends Component {
         <header>
           <h1>Movie time</h1>
         </header>
-        {this.state.movieIsSelected && <MovieDetails selectedMovie={this.state.selectedMovie} />}
+        {this.state.movieIsSelected && <MovieDetails selectedMovie={this.state.selectedMovie} returnHome={this.returnHome} />}
         {!this.state.movieIsSelected &&
           <CardContainer
             movieData={this.state.movies}
