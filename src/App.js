@@ -11,7 +11,8 @@ class App extends Component {
     this.state = {
       movies: [],
       selectedMovie: {},
-      movieIsSelected: false
+      movieIsSelected: false,
+      hasError: false
     }
   }
 
@@ -23,6 +24,12 @@ class App extends Component {
           movies: data.movies
         })
       )
+      .catch(error => {
+        console.log('Error all movies:', error)
+        this.setState({
+          hasError: true
+        })
+      })
   }
 
   selectMovie = (id) => {
@@ -32,13 +39,21 @@ class App extends Component {
       .then(data =>
         this.setState({
           selectedMovie: data.movie
-        }))
+        })
+      )
+      .catch(error => {
+        console.log('Error in movie detail:', error)
+        this.setState({
+          hasError: true
+        })
+      })
   }
 
   returnHome = () => {
     this.setState({
       movieIsSelected: false,
-      selectedMovie: {}
+      selectedMovie: {},
+      hasError: false
     })
   }
 
@@ -48,6 +63,7 @@ class App extends Component {
         <header>
           <h1>Movie time</h1>
         </header>
+        {this.state.hasError && <h2>There is an error with the server, please try again.</h2>}
         {this.state.movieIsSelected && <MovieDetails selectedMovie={this.state.selectedMovie} returnHome={this.returnHome} />}
         {!this.state.movieIsSelected &&
           <CardContainer
