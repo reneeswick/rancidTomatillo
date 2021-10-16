@@ -5,13 +5,14 @@ const Card = (props) => {
   return (
     <div className="Card">
       <img src={props.poster}
-      className='moviePoster'
-      id= {props.id}
-      onClick= {
-        () => {
-          props.movieIsSelected()
+        alt={props.title}
+        className='moviePoster'
+        id={props.id}
+        onClick={
+          () => {
+            props.selectMovie(props.id)
+          }
         }
-      }
       />
     </div>
   );
