@@ -7,10 +7,10 @@ const MovieDetails = ({ selectedMovie, returnHome }) => {
     <div>
       <div className="movie-details-container">
         <h2 className="title">{selectedMovie.title} ({selectedMovie.release_date})</h2>
-          <img className="movieBackDrop" src= {selectedMovie.backdrop_path} alt={selectedMovie.overview}/>
-          <p className="overview">{selectedMovie.overview}</p>
+        <img className="movieBackDrop" src={selectedMovie.backdrop_path} alt={selectedMovie.overview} />
+        <p className="overview">{selectedMovie.overview}</p>
       </div>
-      <button onClick={() => {returnHome()}}>Home</button>
+      <button className="return-home-btn" onClick={() => { returnHome() }}>Home</button>
     </div>
   )
 }
