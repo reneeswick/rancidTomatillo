@@ -70,6 +70,14 @@ class App extends Component {
             />
           }
           />
+          <Route path="/:id" render={({match}) => {
+            return (
+              <MovieDetails
+                id={match.params.id}
+              />
+            )
+          }}
+          />
 
       </div>
     );
