@@ -11,6 +11,13 @@ class MovieDetails extends Component {
     }
   }
 
+  componentDidMount(id) {
+    fetchSingleMovie(this.props.id)
+    .then(data => this.setState({
+      movieData: data.movie
+    }))
+  }
+
   componentDidUpdate(id) {
     fetchSingleMovie(this.props.id)
     .then(data => this.setState({
@@ -18,12 +25,6 @@ class MovieDetails extends Component {
     }))
   }
 
-  componentDidMount(id) {
-    fetchSingleMovie(this.props.id)
-    .then(data => this.setState({
-      movieData: data.movie
-    }))
-  }
 
   returnHome = () => {
     this.setState(
@@ -37,7 +38,6 @@ class MovieDetails extends Component {
   render() {
     return (
       <div>
-        {console.log(this.state.movieData)}
         <div className="movie-details-container">
           <h2 className="title">{this.state.movieData.title} ({this.state.movieData.release_date})</h2>
           <img className="movieBackDrop" src={this.state.movieData.backdrop_path} alt={this.state.movieData.overview} />
