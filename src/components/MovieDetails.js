@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../styles/MovieDetails.css';
-import { fetchSingleMovie } from '../ApiCalls.js'
+import { fetchSingleMovie } from '../ApiCalls.js';
+import { Link } from 'react-router-dom';
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class MovieDetails extends Component {
     }
   }
 
+
   componentDidMount(id) {
     fetchSingleMovie(this.props.id)
     .then(data => this.setState({
@@ -18,12 +20,13 @@ class MovieDetails extends Component {
     }))
   }
 
-  componentDidUpdate(id) {
-    fetchSingleMovie(this.props.id)
-    .then(data => this.setState({
-      movieData: data.movie
-    }))
-  }
+  // componentDidUpdate(id) {
+  //   fetchSingleMovie(this.props.id)
+  //   .then(data => this.setState({
+  //     movieData: data.movie
+  //   }))
+  //   .then(() => {console.log('DidUpdate')})
+  // }
 
 
   returnHome = () => {
@@ -43,7 +46,9 @@ class MovieDetails extends Component {
           <img className="movieBackDrop" src={this.state.movieData.backdrop_path} alt={this.state.movieData.overview} />
           <p className="overview">{this.state.movieData.overview}</p>
         </div>
-        <button className="return-home-btn" onClick={() => { this.returnHome() }}>Home</button>
+        <Link to="/">
+          <button className="return-home-btn">Home</button>
+        </Link>
       </div>
     )
   }

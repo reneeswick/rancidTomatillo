@@ -62,7 +62,7 @@ class App extends Component {
           <h1 className="page-title">Movie time</h1>
         </header>
         {this.state.hasError && <h2>There is an error with the server, please try again.</h2>}
-          <Route path="/" render={ () =>
+          <Route exact path="/" render={ () =>
             <CardContainer
             movieData={this.state.movies}
             selectedMovie={this.state.selectedMovie}
@@ -74,7 +74,6 @@ class App extends Component {
               <MovieDetails
                 id={match.params.id}
               />
-
           }
           />
       </div>
