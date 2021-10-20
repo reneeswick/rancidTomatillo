@@ -70,13 +70,12 @@ class App extends Component {
             />
           }
           />
-          <Route path="/:id" render={({match}) => {
-            return (
+          <Route path="/:id" render={({match}) =>
               <MovieDetails
                 id={match.params.id}
               />
-            )
-          }}
+
+          }
           />
 
       </div>
