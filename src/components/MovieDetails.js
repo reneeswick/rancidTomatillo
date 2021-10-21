@@ -13,21 +13,12 @@ class MovieDetails extends Component {
   }
 
 
-  componentDidMount(id) {
+  componentDidMount() {
     fetchSingleMovie(this.props.id)
     .then(data => this.setState({
       movieData: data.movie
     }))
   }
-
-  // componentDidUpdate(id) {
-  //   fetchSingleMovie(this.props.id)
-  //   .then(data => this.setState({
-  //     movieData: data.movie
-  //   }))
-  //   .then(() => {console.log('DidUpdate')})
-  // }
-
 
   returnHome = () => {
     this.setState(
