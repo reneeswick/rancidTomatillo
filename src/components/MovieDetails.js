@@ -8,18 +8,21 @@ class MovieDetails extends Component {
     super();
     this.state = {
       movieData: {},
-      hasError: false,
+      hasError: false
     }
   }
 
-
   componentDidMount() {
-    const { id } = this.props
+    const { id, handleError } = this.props
     fetchSingleMovie(id)
       .then(data => this.setState({
         movieData: data.movie
       }))
+      .catch(error => {
+        handleError();
+      })
   }
+
 
   returnHome = () => {
     this.setState(
@@ -31,6 +34,9 @@ class MovieDetails extends Component {
   }
 
   render() {
+    // (this.state.movieData.title === undefined && console.log('our render error<<<<<<'));
+    // return <Redirect to="/" />
+    // console.log('this.state.movieData', this.state.movieData)
     const { title, release_date, backdrop_path, overview } = this.state.movieData;
     return (
       <div>
@@ -44,11 +50,10 @@ class MovieDetails extends Component {
         </Link>
       </div>
     )
+
   }
 
 }
-
-
 
 
 export default MovieDetails;
