@@ -3,14 +3,14 @@ import Card from './Card'
 // import MovieDetails from './MovieDetails'
 import '../styles/CardContainer.css'
 
-const CardContainer = (props) => {
-  const cardInfo = props.movieData.map(movie => {
+const CardContainer = ({ movieData, selectMovie }) => {
+  const cardInfo = movieData.map(movie => {
     return (
       <Card
         id={movie.id}
         poster={movie.poster_path}
         key={movie.id}
-        selectMovie={props.selectMovie}
+        selectMovie={selectMovie}
       />
     )
   })
