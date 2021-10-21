@@ -1,20 +1,16 @@
 import React from 'react'
 import '../styles/Card.css'
+import { Link } from 'react-router-dom';
 
 const Card = (props) => {
   return (
-    <div className="Card">
+    <Link to= {`/${props.id}`} className='Card'>
       <img src={props.poster}
         alt={props.title}
         className='moviePoster'
         id={props.id}
-        onClick={
-          () => {
-            props.selectMovie(props.id)
-          }
-        }
       />
-    </div>
+    </Link>
   );
 
 }

@@ -1,18 +1,52 @@
-import React from 'react';
+import React, {Component} from 'react';
 import '../styles/MovieDetails.css';
+import { fetchSingleMovie } from '../ApiCalls.js';
+import { Link } from 'react-router-dom';
 
-const MovieDetails = ({ selectedMovie, returnHome }) => {
+class MovieDetails extends Component {
+  constructor(props) {
+    super();
+    this.state = {
+      movieData: {},
+      hasError: false,
+    }
+  }
 
-  return (
-    <div>
-      <div className="movie-details-container">
-        <h2 className="title">{selectedMovie.title} ({selectedMovie.release_date})</h2>
-        <img className="movieBackDrop" src={selectedMovie.backdrop_path} alt={selectedMovie.overview} />
-        <p className="overview">{selectedMovie.overview}</p>
+
+  componentDidMount() {
+    fetchSingleMovie(this.props.id)
+    .then(data => this.setState({
+      movieData: data.movie
+    }))
+  }
+
+  returnHome = () => {
+    this.setState(
+      {
+        movieData: {},
+        hasError: false
+      }
+    )
+  }
+
+  render() {
+    return (
+      <div>
+        <div className="movie-details-container">
+          <h2 className="title">{this.state.movieData.title} ({this.state.movieData.release_date})</h2>
+          <img className="movieBackDrop" src={this.state.movieData.backdrop_path} alt={this.state.movieData.overview} />
+          <p className="overview">{this.state.movieData.overview}</p>
+        </div>
+        <Link to="/">
+          <button className="return-home-btn">Home</button>
+        </Link>
       </div>
-      <button className="return-home-btn" onClick={() => { returnHome() }}>Home</button>
-    </div>
-  )
+    )
+  }
+
 }
+
+
+
 
 export default MovieDetails;
