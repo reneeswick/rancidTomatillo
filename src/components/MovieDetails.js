@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import '../styles/MovieDetails.css';
 import { fetchSingleMovie } from '../ApiCalls.js';
 import { Link } from 'react-router-dom';
 
 class MovieDetails extends Component {
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
       movieData: {},
@@ -14,10 +14,11 @@ class MovieDetails extends Component {
 
 
   componentDidMount() {
-    fetchSingleMovie(this.props.id)
-    .then(data => this.setState({
-      movieData: data.movie
-    }))
+    const { id } = this.props
+    fetchSingleMovie(id)
+      .then(data => this.setState({
+        movieData: data.movie
+      }))
   }
 
   returnHome = () => {
@@ -30,12 +31,13 @@ class MovieDetails extends Component {
   }
 
   render() {
+    const { title, release_date, backdrop_path, overview } = this.state.movieData;
     return (
       <div>
         <div className="movie-details-container">
-          <h2 className="title">{this.state.movieData.title} ({this.state.movieData.release_date})</h2>
-          <img className="movieBackDrop" src={this.state.movieData.backdrop_path} alt={this.state.movieData.overview} />
-          <p className="overview">{this.state.movieData.overview}</p>
+          <h2 className="title">{title} ({release_date})</h2>
+          <img className="movieBackDrop" src={backdrop_path} alt={overview} />
+          <p className="overview">{overview}</p>
         </div>
         <Link to="/">
           <button className="return-home-btn">Home</button>
