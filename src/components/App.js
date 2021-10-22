@@ -33,7 +33,7 @@ class App extends Component {
   }
 
   handleError = () => {
-    <Redirect to="/Error" />
+    // <Redirect to="/Error" />
     console.log('handle error in app');
   }
 
@@ -68,29 +68,36 @@ class App extends Component {
           <h1 className="page-title">Movie time</h1>
         </header>
         {this.state.hasError && <h2>There is an error with the server, please try again.</h2>}
-        {/* <Switch> */}
+        <Switch>
+          <Route path="/Error" component={Error} />
+          <Route exact path="/" render={() =>
+            <CardContainer
+              movieData={this.state.movies}
+              selectedMovie={this.state.selectedMovie}
+              selectMovie={this.selectMovie}
+            />
+          }
+          />
+          <Route exact path="/:id" render={({ match }) =>
+            <MovieDetails
+              id={match.params.id}
+              handleError={this.handleError}
+            />
+          }
+          />
+          {/* <Redirect to="/error" /> */}
+          {/* <Route path="/error" render={() => {
+            <Error />
+          }} />
+          <Route /> */}
+          {/* <Route path="/error"> <Error /></Route> */}
+          {/* <Route component={Error} /> */}
+          {/* <Route path="*" component={Error} /> */}
 
-        <Route exact path="/" render={() =>
-          <CardContainer
-            movieData={this.state.movies}
-            selectedMovie={this.state.selectedMovie}
-            selectMovie={this.selectMovie}
-          />
-        }
-        />
-        <Route path="/:id" render={({ match }) =>
-          <MovieDetails
-            id={match.params.id}
-            handleError={this.handleError}
-          />
-        }
-        />
-        {/* <Redirect to="/error" /> */}
-        <Route path="/error" render={() => {
-          <Error />
-        }} />
-        <Route />
-        {/* </Switch> */}
+          {/* <Route path="/*" render={() => {
+            <Error />
+          }} /> */}
+        </Switch>
       </div >
     );
   }
