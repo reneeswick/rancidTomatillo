@@ -13,13 +13,13 @@ class MovieDetails extends Component {
   }
 
   componentDidMount() {
-    const { id, handleError } = this.props
-    fetchSingleMovie(id)
+    // const { id, handleError } = this.props
+    fetchSingleMovie(this.props.id)
       .then(data => this.setState({
         movieData: data.movie
       }))
       .catch(error => {
-        handleError();
+        this.props.handleError();
       })
   }
 

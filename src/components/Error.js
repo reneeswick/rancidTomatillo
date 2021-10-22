@@ -1,7 +1,12 @@
 import React from 'react'
 
 const Error = () => {
-  return <h1>Hello world!</h1>
+  return (
+    <div>
+      <h1>Hello world!</h1>
+      <p>This means our error testing page is working.</p>
+    </div>
+  )
 }
 
 export default Error;
