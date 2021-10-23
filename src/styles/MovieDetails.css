@@ -45,6 +45,6 @@
   border: 0;
   padding: 1rem;
   margin: 1rem;
+  box-shadow: 0 0.75rem 1.5rem 0 black;
+  cursor: pointer;
 }
-
-
