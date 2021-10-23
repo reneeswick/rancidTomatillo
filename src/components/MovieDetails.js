@@ -43,13 +43,14 @@ class MovieDetails extends Component {
     if (this.state.hasError) {
       return <Redirect to="/Error" />
     }
-    const { title, release_date, backdrop_path, overview } = this.state.movieData;
+    const { title, release_date, backdrop_path, overview, tagline } = this.state.movieData;
     return (
       <div>
         <section className="movie-back-drop" style={{ backgroundImage: `url(${backdrop_path})` }}>
           <section className="movie-details-container">
             <h2 className="title">{title}</h2>
-            <h3 className="release-date">({release_date}) </h3>
+            <h3 className="release-date">(Released: {release_date}) </h3>
+            <h3 className="tagline">{tagline}</h3>
             <p className="overview">{overview}</p>
           </section>
           <Link to="/">
