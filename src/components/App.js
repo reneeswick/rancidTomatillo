@@ -37,22 +37,6 @@ class App extends Component {
     console.log('handle error in app');
   }
 
-  // selectMovie = (id) => {
-  //   this.setState({ movieIsSelected: true })
-  //   fetchSingleMovie(id)
-  //     .then(data =>
-  //       this.setState({
-  //         selectedMovie: data.movie
-  //       })
-  //     )
-  //     .catch(error => {
-  //       console.log('Error in app fetch:', error)
-  //       this.setState({
-  //         hasError: true
-  //       })
-  //     })
-  // }
-
   returnHome = () => {
     this.setState({
       movieIsSelected: false,
