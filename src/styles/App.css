@@ -9,12 +9,7 @@
   padding-bottom: 2rem;
   font-weight: 700;
   color: white;
+  text-shadow: 0 0.2rem #880808;
   font-size: 4rem;
 }
-
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
 
