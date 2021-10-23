@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/rancidTomatillo/static/css/main.e6693e63.chunk.css",
-    "main.js": "/rancidTomatillo/static/js/main.b74fdf45.chunk.js",
-    "main.js.map": "/rancidTomatillo/static/js/main.b74fdf45.chunk.js.map",
+    "main.js": "/rancidTomatillo/static/js/main.d383fccd.chunk.js",
+    "main.js.map": "/rancidTomatillo/static/js/main.d383fccd.chunk.js.map",
     "runtime-main.js": "/rancidTomatillo/static/js/runtime-main.df8fd032.js",
     "runtime-main.js.map": "/rancidTomatillo/static/js/runtime-main.df8fd032.js.map",
-    "static/js/2.2314d4e2.chunk.js": "/rancidTomatillo/static/js/2.2314d4e2.chunk.js",
-    "static/js/2.2314d4e2.chunk.js.map": "/rancidTomatillo/static/js/2.2314d4e2.chunk.js.map",
+    "static/js/2.760add69.chunk.js": "/rancidTomatillo/static/js/2.760add69.chunk.js",
+    "static/js/2.760add69.chunk.js.map": "/rancidTomatillo/static/js/2.760add69.chunk.js.map",
     "static/js/3.39cce60c.chunk.js": "/rancidTomatillo/static/js/3.39cce60c.chunk.js",
     "static/js/3.39cce60c.chunk.js.map": "/rancidTomatillo/static/js/3.39cce60c.chunk.js.map",
     "index.html": "/rancidTomatillo/index.html",
     "static/css/main.e6693e63.chunk.css.map": "/rancidTomatillo/static/css/main.e6693e63.chunk.css.map",
-    "static/js/2.2314d4e2.chunk.js.LICENSE.txt": "/rancidTomatillo/static/js/2.2314d4e2.chunk.js.LICENSE.txt"
+    "static/js/2.760add69.chunk.js.LICENSE.txt": "/rancidTomatillo/static/js/2.760add69.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.df8fd032.js",
-    "static/js/2.2314d4e2.chunk.js",
+    "static/js/2.760add69.chunk.js",
     "static/css/main.e6693e63.chunk.css",
-    "static/js/main.b74fdf45.chunk.js"
+    "static/js/main.d383fccd.chunk.js"
   ]
 }
