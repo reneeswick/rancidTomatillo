@@ -9,7 +9,7 @@
 }
 
 .movie-details-container {
-  background:rgb(99, 99, 99, 0.9);
+  background:rgb(99, 99, 99, 0.85);
   font-weight: 500;
   color: white;
   margin: 2rem 2rem 2rem 2rem;
@@ -45,11 +45,11 @@
   border: 0;
   padding: 1rem;
   margin: 1rem;
-  box-shadow: 0 0.75rem 1.5rem 0 black;
+  box-shadow: 0 0.25rem 0.5rem 0 black;
   cursor: pointer;
 }
 
 .return-home-btn:hover {
   transform: scale(1.10);
-  box-shadow: 0 4px 8px 0 #880808;
+  box-shadow: 0 0.5rem 0.75rem 0 #880808;
 }
