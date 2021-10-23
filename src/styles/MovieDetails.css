@@ -23,7 +23,7 @@
 }
 
 .release-date {
-  font-size: 2rem;
+  font-size: 1.25rem;
   margin-top: 0.8rem;
 }
 
@@ -34,8 +34,6 @@
 
 .overview {
   font-size: 1.5rem;
-  grid-row-start: 2;
-  grid-row-end: 4;
 }
 
 
