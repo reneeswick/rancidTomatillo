@@ -5,5 +5,5 @@ describe('Error handling', () => {
       expect(loc.hash).to.eq('#/Error')
       expect(loc.href).to.eq('http://localhost:3000/#/Error')
     })
-  })
+  });
 });

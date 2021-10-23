@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import CardContainer from './CardContainer.js';
 import MovieDetails from './MovieDetails.js';
-import { fetchAllMovies, fetchSingleMovie } from '../ApiCalls.js'
+import { fetchAllMovies, fetchSingleMovie } from '../ApiCalls.js';
 import '../styles/App.css';
-import Error from './Error.js'
+import Error from './Error.js';
 import { Route, Switch, Redirect, HashRouter } from 'react-router-dom';
 
 class App extends Component {
@@ -30,11 +30,6 @@ class App extends Component {
           hasError: true
         })
       })
-  }
-
-  handleError = () => {
-    // <Redirect to="/Error" />
-    console.log('handle error in app');
   }
 
   returnHome = () => {
@@ -73,7 +68,7 @@ class App extends Component {
           </Switch>
         </div >
       </HashRouter>
-    );
+    )
   }
 }
 

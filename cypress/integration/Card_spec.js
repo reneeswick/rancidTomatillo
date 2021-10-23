@@ -27,5 +27,4 @@ describe('Cards:', () => {
     cy.get('.movie-details-container').should('be.visible')
     cy.contains('This is a test')
   });
-
-})
+});
