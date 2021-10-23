@@ -70,7 +70,6 @@ class App extends Component {
           </header>
           {this.state.hasError && <h2>There is an error with the server, please try again.</h2>}
           <Switch>
-            <Route path="/Error" component={Error} />
             <Route exact path="/" render={() =>
               <CardContainer
                 movieData={this.state.movies}
@@ -79,6 +78,7 @@ class App extends Component {
               />
             }
             />
+            <Route path="/Error" component={Error} />
             <Route exact path="/:id" render={({ match }) =>
               <MovieDetails
                 id={match.params.id}
