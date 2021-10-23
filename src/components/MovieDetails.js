@@ -61,5 +61,4 @@ class MovieDetails extends Component {
   }
 }
 
-
 export default MovieDetails;
