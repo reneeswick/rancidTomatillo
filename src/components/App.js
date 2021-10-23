@@ -47,7 +47,7 @@ class App extends Component {
 
   render() {
     return (
-      <HashRouter basename='/'>
+      <HashRouter basename="/">
         <div className="app">
           <header>
             <h1 className="page-title">Movie time</h1>
