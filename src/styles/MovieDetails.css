@@ -42,6 +42,9 @@
   color: rgb(99, 99, 99, 0.9);
   font-size: 2rem;
   border-radius: 10rem;
+  border: 0;
+  padding: 1rem;
+  margin: 1rem;
 }
 
 
