@@ -1,7 +1,6 @@
-import React from 'react'
-import Card from './Card'
-// import MovieDetails from './MovieDetails'
-import '../styles/CardContainer.css'
+import React from 'react';
+import Card from './Card';
+import '../styles/CardContainer.css';
 
 const CardContainer = ({ movieData, selectMovie }) => {
   const cardInfo = movieData.map(movie => {

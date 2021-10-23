@@ -1,10 +1,10 @@
-import React from 'react'
-import '../styles/Card.css'
+import React from 'react';
+import '../styles/Card.css';
 import { Link } from 'react-router-dom';
 
 const Card = ({ id, poster, title }) => {
   return (
-    < Link to={`/${id}`
+    <Link to={`/${id}`
     } className='Card' >
       <img src={poster}
         alt={`Poster for the movie ${title}`}
@@ -13,7 +13,6 @@ const Card = ({ id, poster, title }) => {
       />
     </Link >
   );
-
 }
 
 export default Card;

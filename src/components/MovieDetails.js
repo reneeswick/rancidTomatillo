@@ -13,18 +13,12 @@ class MovieDetails extends Component {
   }
 
   componentDidMount() {
-    // const { id, handleError } = this.props
     fetchSingleMovie(this.props.id)
-      // .then(data => console.log('data in movieDetail after fetch:', data))
-      // .then(data => this.setState({
-      //   movieData: data.movie
-      // }))
       .then(data => {
         if (data === undefined) {
           this.setState({
             hasError: true
           })
-          console.log(this.state.hasError)
         } else {
           this.setState({
             movieData: data.movie
@@ -32,10 +26,9 @@ class MovieDetails extends Component {
         }
       })
       .catch(error => {
-        this.props.handleError();
+        console.log(error);
       })
   }
-
 
   returnHome = () => {
     this.setState(
@@ -50,8 +43,6 @@ class MovieDetails extends Component {
     if (this.state.hasError) {
       return <Redirect to="/Error" />
     }
-    // return <Redirect to="/" />
-    // console.log('this.state.movieData', this.state.movieData)
     const { title, release_date, backdrop_path, overview } = this.state.movieData;
     return (
       <div>
@@ -65,9 +56,7 @@ class MovieDetails extends Component {
         </Link>
       </div>
     )
-
   }
-
 }
 
 
