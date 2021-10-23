@@ -4,7 +4,7 @@ import MovieDetails from './MovieDetails.js';
 import { fetchAllMovies, fetchSingleMovie } from '../ApiCalls.js'
 import '../styles/App.css';
 import Error from './Error.js'
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect, HashRouter } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -63,42 +63,32 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
-        <header>
-          <h1 className="page-title">Movie time</h1>
-        </header>
-        {this.state.hasError && <h2>There is an error with the server, please try again.</h2>}
-        <Switch>
-          <Route path="/Error" component={Error} />
-          <Route exact path="/" render={() =>
-            <CardContainer
-              movieData={this.state.movies}
-              selectedMovie={this.state.selectedMovie}
-              selectMovie={this.selectMovie}
+      <HashRouter basename='/'>
+        <div className="app">
+          <header>
+            <h1 className="page-title">Movie time</h1>
+          </header>
+          {this.state.hasError && <h2>There is an error with the server, please try again.</h2>}
+          <Switch>
+            <Route path="/Error" component={Error} />
+            <Route exact path="/" render={() =>
+              <CardContainer
+                movieData={this.state.movies}
+                selectedMovie={this.state.selectedMovie}
+                selectMovie={this.selectMovie}
+              />
+            }
             />
-          }
-          />
-          <Route exact path="/:id" render={({ match }) =>
-            <MovieDetails
-              id={match.params.id}
-              handleError={this.handleError}
+            <Route exact path="/:id" render={({ match }) =>
+              <MovieDetails
+                id={match.params.id}
+                handleError={this.handleError}
+              />
+            }
             />
-          }
-          />
-          {/* <Redirect to="/error" /> */}
-          {/* <Route path="/error" render={() => {
-            <Error />
-          }} />
-          <Route /> */}
-          {/* <Route path="/error"> <Error /></Route> */}
-          {/* <Route component={Error} /> */}
-          {/* <Route path="*" component={Error} /> */}
-
-          {/* <Route path="/*" render={() => {
-            <Error />
-          }} /> */}
-        </Switch>
-      </div >
+          </Switch>
+        </div >
+      </HashRouter>
     );
   }
 }
