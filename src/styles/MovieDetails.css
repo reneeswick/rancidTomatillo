@@ -48,3 +48,8 @@
   box-shadow: 0 0.75rem 1.5rem 0 black;
   cursor: pointer;
 }
+
+.return-home-btn:hover {
+  transform: scale(1.10);
+  box-shadow: 0 4px 8px 0 #880808;
+}
