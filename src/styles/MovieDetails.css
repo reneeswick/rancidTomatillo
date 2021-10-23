@@ -1,15 +1,16 @@
-.movie-details-container {
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(3, 1fr);
-}
-
 .movie-background-img {
   background-size: cover;
   display: flex;
   flex-direction: row;
   justify-content: center;
   min-height: 50vh;
+  padding: 0;
+  opacity: 0.5;
+}
+
+.movie-details-container {
+ color: white;
+ background: grey;
 }
 
 .title {
