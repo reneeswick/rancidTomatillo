@@ -4,13 +4,12 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
-.movieBackDrop {
-  grid-row-start: 1;
-  grid-row-end: 4;
-  grid-column-start: 1;
-  grid-column-end: 3;
-  height: 100%;
-  width: 100%;
+.movie-background-img {
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-height: 50vh;
 }
 
 .title {
