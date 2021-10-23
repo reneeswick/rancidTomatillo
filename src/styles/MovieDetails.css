@@ -1,4 +1,4 @@
-.movie-background-img {
+.movie-background {
   background-size: cover;
   display: flex;
   flex-direction: row;
@@ -10,8 +10,10 @@
 .movie-details-container {
   background: rgb(169, 169, 169, 0.75);
   font-weight: 500;
-  /* opacity: 0.75; */
   color: white;
+  margin: 2rem 2rem 2rem 2rem;
+  padding: 1rem 2rem 1rem 2rem;
+  /* max-width: 50rem; */
 }
 
 .title {

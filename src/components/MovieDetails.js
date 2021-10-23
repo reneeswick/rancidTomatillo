@@ -46,7 +46,7 @@ class MovieDetails extends Component {
     const { title, release_date, backdrop_path, overview } = this.state.movieData;
     return (
       <div>
-        <section className="movie-background-img">
+        <section className="movie-background">
           <section className="movieBackDrop" style={{ backgroundImage: `url(${backdrop_path})` }}>
             <section className="movie-details-container">
               <h2 className="title">{title} ({release_date})</h2>
