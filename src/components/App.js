@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import CardContainer from './CardContainer.js';
 import MovieDetails from './MovieDetails.js';
-import {fetchAllMovies, fetchSingleMovie} from '../ApiCalls.js'
+import { fetchAllMovies, fetchSingleMovie } from '../ApiCalls.js'
 import '../styles/App.css';
-import {Route} from 'react-router-dom';
+import Error from './Error.js'
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -24,28 +25,33 @@ class App extends Component {
         })
       )
       .catch(error => {
-        console.log('Error all movies:', error)
+        console.log('Error getting all movies:', error)
         this.setState({
           hasError: true
         })
       })
   }
 
-  selectMovie = (id) => {
-    this.setState({ movieIsSelected: true })
-      fetchSingleMovie(id)
-        .then(data =>
-          this.setState({
-            selectedMovie: data.movie
-          })
-        )
-        .catch(error => {
-          console.log('Error in movie detail:', error)
-          this.setState({
-            hasError: true
-          })
-        })
+  handleError = () => {
+    // <Redirect to="/Error" />
+    console.log('handle error in app');
   }
+
+  // selectMovie = (id) => {
+  //   this.setState({ movieIsSelected: true })
+  //   fetchSingleMovie(id)
+  //     .then(data =>
+  //       this.setState({
+  //         selectedMovie: data.movie
+  //       })
+  //     )
+  //     .catch(error => {
+  //       console.log('Error in app fetch:', error)
+  //       this.setState({
+  //         hasError: true
+  //       })
+  //     })
+  // }
 
   returnHome = () => {
     this.setState({
@@ -62,21 +68,37 @@ class App extends Component {
           <h1 className="page-title">Movie time</h1>
         </header>
         {this.state.hasError && <h2>There is an error with the server, please try again.</h2>}
-          <Route exact path="/" render={ () =>
+        <Switch>
+          <Route path="/Error" component={Error} />
+          <Route exact path="/" render={() =>
             <CardContainer
-            movieData={this.state.movies}
-            selectedMovie={this.state.selectedMovie}
-            selectMovie={this.selectMovie}
+              movieData={this.state.movies}
+              selectedMovie={this.state.selectedMovie}
+              selectMovie={this.selectMovie}
             />
           }
           />
-          <Route path="/:id" render={({match}) =>
-              <MovieDetails
-                id={match.params.id}
-              />
+          <Route exact path="/:id" render={({ match }) =>
+            <MovieDetails
+              id={match.params.id}
+              handleError={this.handleError}
+            />
           }
           />
-      </div>
+          {/* <Redirect to="/error" /> */}
+          {/* <Route path="/error" render={() => {
+            <Error />
+          }} />
+          <Route /> */}
+          {/* <Route path="/error"> <Error /></Route> */}
+          {/* <Route component={Error} /> */}
+          {/* <Route path="*" component={Error} /> */}
+
+          {/* <Route path="/*" render={() => {
+            <Error />
+          }} /> */}
+        </Switch>
+      </div >
     );
   }
 }
