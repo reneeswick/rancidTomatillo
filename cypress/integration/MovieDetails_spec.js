@@ -8,6 +8,6 @@ describe('Movie details:', () => {
   });
   it('When user clicks the home button, they should return home', () => {
     cy.get('button').click()
-    cy.url().should("equal", "http://localhost:3000/");
+    cy.url().should("equal", "http://localhost:3000/#/");
   });
 })
