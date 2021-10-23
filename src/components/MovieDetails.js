@@ -51,14 +51,14 @@ class MovieDetails extends Component {
             <h2 className="title">{title}</h2>
             <h3 className="tagline">{tagline}</h3>
             <p className="overview">{overview}</p>
-            {/* <div className='genre-container'>
-              {console.log(genres)}
-              {genres.map(genre => <p className='genres' key={genre}>{genre}</p>)}
-            </div> */}
+            <div className='genre-container'>
+              {/* {console.log(genres)}
+              {genres.map(genre => <p className='genres' key={genre}>{genre}</p>)} */}
+            </div>
             <h3 className="release-date">(Released: {release_date}) </h3>
           </section>
           <Link to="/">
-            <button className="return-home-btn">Home</button>
+            <button className="return-home-btn">HOME</button>
           </Link>
         </section>
       </div >
