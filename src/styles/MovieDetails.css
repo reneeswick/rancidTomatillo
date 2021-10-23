@@ -8,8 +8,10 @@
 }
 
 .movie-details-container {
- color: white;
- background: grey;
+  background: rgb(169, 169, 169, 0.75);
+  font-weight: 500;
+  /* opacity: 0.75; */
+  color: white;
 }
 
 .title {
