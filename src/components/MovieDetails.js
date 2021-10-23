@@ -52,6 +52,9 @@ class MovieDetails extends Component {
             <h3 className="release-date">(Released: {release_date}) </h3>
             <h3 className="tagline">{tagline}</h3>
             <p className="overview">{overview}</p>
+            <div>
+
+            </div>
           </section>
           <Link to="/">
             <button className="return-home-btn">Home</button>
