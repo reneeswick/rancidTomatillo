@@ -1,0 +1,28 @@
+.error {
+  color: yellow;
+  border-bottom: .15rem solid #1DFFFF;
+}
+
+.error-msg {
+  font-size: 18pt;
+  color: #DADADC;
+}
+
+.error-instr {
+  font-size: 14pt;
+  color: #DADADC;
+}
+
+.blooper-img {
+  width: 50rem;
+}
+
+.link {
+  color: grey;
+  text-transform: uppercase;
+}
+
+.link:hover {
+  color: #1DFFFF;
+  font-size: 14pt;
+}
