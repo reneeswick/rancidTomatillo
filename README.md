@@ -1,12 +1,14 @@
-# Rancid Tomatillo
-Mod3 + Rancid Tomatillo
+# Rancid Tomatillos
+Mod3 + Rancid Tomatillos
+
+<img width="600" alt="Screen Shot 2021-10-24 at 2 43 00 PM" src="https://user-images.githubusercontent.com/83723401/138612238-a833800b-e1d0-4bd8-92bb-5583387511e8.png">
 
 ## Table of Contents
   - [Abstract](#abstract)
   - [Technologies](#technologies)
   - [Install](#install)
-  - [Code Architecture](#code-architecture)
   - [Illustrations](#illustrations)
+  - [Code Architecture](#code-architecture)
   - [Contributors](#contributors)
 	- [Wins](#wins)
 	- [Challenges + Improvements](#challenges)
@@ -30,6 +32,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Install
 Project deployed on GitHub pages [here]( https://reneeswick.github.io/rancidTomatillo/ ). 
+
+## Illustrations
+![Walkthrough of App](https://user-images.githubusercontent.com/83723401/138612564-84921686-4c67-402a-b4ce-1e1bf65b0c6a.gif)
   
 ## Code Architecture
 ``React Components``
@@ -47,10 +52,6 @@ Project deployed on GitHub pages [here]( https://reneeswick.github.io/rancidToma
 
 ``./cypress/integration``
 - Testing files
-
-## Illustrations
-Use [https://gifcap.dev/](https://gifcap.dev/) to make GIFs
-INSERT AFTER STYLING IS COMPLETE
 
 ## Contributors
   - [Eric Sergeant](https://github.com/EricSergeant)
