@@ -4,3 +4,8 @@
   grid-gap: 2rem;
   justify-content: space-evenly;
 }
+
+img:hover {
+  transform: scale(1.10);
+  box-shadow: 0 0 0.75rem 0.75rem #880808;
+}
