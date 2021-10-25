@@ -3,6 +3,9 @@ Mod3 + Rancid Tomatillos
 
 <img width="600" alt="Screen Shot 2021-10-24 at 2 43 00 PM" src="https://user-images.githubusercontent.com/83723401/138612238-a833800b-e1d0-4bd8-92bb-5583387511e8.png">
 
+## Abstract
+Not sure what to watch tonight? Use Rancid Tomatillo to browse a library of movies. Get to know the overview, release date, and other fun movie info to help you decide what you'll watch next.
+
 ## Table of Contents
   - [Abstract](#abstract)
   - [Technologies](#technologies)
@@ -13,9 +16,6 @@ Mod3 + Rancid Tomatillos
 	- [Wins](#wins)
 	- [Challenges + Improvements](#challenges)
   - [Project Specs](#project-specs)
-
-## Abstract
-Not sure what to watch tonight? Use Rancid Tomatillo to browse a library of movies. Get to know the overview, release date, and other fun movie info to help you decide what you'll watch next.
 
 ## Technologies
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
