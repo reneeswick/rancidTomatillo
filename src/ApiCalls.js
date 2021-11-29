@@ -1,8 +1,9 @@
 import { Redirect } from 'react-router-dom';
 
 export const fetchAllMovies = () => {
-  return fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
+  return fetch('https://openlibrary.org/subjects/history.json')
     .then(results => results.json())
+    .then(data => console.log(data))
 };
 
 export const fetchSingleMovie = (id) => {
